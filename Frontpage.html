@@ -3,7 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>EcoRunner</title>
+
+    <!-- SEO: basis -->
+    <meta name="description"
+          content="EcoRunner hjælper dig med at finde de grønneste tilbud ved at sammenligne pris, CO₂-aftryk, materialer, certificeringer og produktets holdbarhed.">
+    <meta name="author" content="EcoRunner (eksamensprojekt)">
+    <link rel="canonical" href="https://ecorunner.local/">
+
+    <!-- VIGTIGT: blokér søgemaskiner (eksamensprojekt) -->
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="googlebot" content="noindex, nofollow, noarchive">
+    <meta name="bingbot" content="noindex, nofollow, noarchive">
+
+    <!-- Open Graph (deles på sociale medier, men stadig noindex) -->
+    <meta property="og:locale" content="da_DK">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="EcoRunner">
+    <meta property="og:title" content="EcoRunner – sammenlign grønne tilbud">
+    <meta property="og:description"
+          content="Sammenlign tilbud med fokus på klima, materialer, certificeringer og produktets levetid.">
+    <meta property="og:url" content="https://ecorunner.local/">
+    <meta property="og:image" content="https://ecorunner.local/pics/forest.jpg">
+
+    <!-- Twitter Card (hvis siden deles) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="EcoRunner – sammenlign grønne tilbud">
+    <meta name="twitter:description"
+          content="EcoRunner gør det nemt at finde de grønneste produkter og tilbud.">
+    <meta name="twitter:image" content="https://ecorunner.local/pics/forest.jpg">
+
+    <!-- Strukturdata (JSON-LD) til eksamen -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "EcoRunner",
+            "url": "https://ecorunner.local/",
+            "description": "EcoRunner er en digital platform, der hjælper brugere med at finde de grønneste tilbud baseret på CO₂-aftryk, materialer og certificeringer.",
+            "inLanguage": "da-DK",
+            "publisher": {
+                "@type": "Organization",
+                "name": "EcoRunner",
+                "logo": {
+                    "@type": "ImageObject",
+                    "url": "https://ecorunner.local/pics/logo.svg"
+                }
+            }
+        }
+    </script>
 
     <!-- Google font til logo-tekst -->
     <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet">
@@ -18,6 +67,13 @@
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+
+<!-- Preconnect for fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<a href="#site-search" class="skip-link">Spring til søgning</a>
+<a href="#main-content" class="skip-link">Spring til hovedindhold</a>
 
 <nav class="navbar navbar-expand-lg navbar-dark navbar-eco py-3">
     <div class="container-xxl px-5">
@@ -78,7 +134,7 @@
                         Om & Support
                     </a>
                     <ul class="dropdown-menu dropdown-menu-eco">
-                        <li class="dropdown-item">Om EcoRunner</li>
+                        <li><a class="dropdown-item" href="#">Om EcoRunner</a></li>
                         <li><a class="dropdown-item" href="#">Klimafokus & værdier</a></li>
                         <li><a class="dropdown-item" href="#">Kontakt & samarbejde</a></li>
                         <li><a class="dropdown-item" href="#">FAQ & Support</a></li>
@@ -88,15 +144,20 @@
             </ul>
 
             <!-- Søg -->
-            <form class="d-none d-lg-flex" role="search">
-                <input class="form-control search-pill" type="search" placeholder="Søg" aria-label="Søg">
+            <form id="site-search"
+                  class="d-flex d-lg-flex mt-3 mt-lg-0"
+                  role="search">
+                <input class="form-control search-pill w-100"
+                       type="search"
+                       placeholder="Søg"
+                       aria-label="Søg">
             </form>
 
         </div>
     </div>
 </nav>
 
-<main class="eco-main py-4">
+<main id="main-content" class="eco-main py-4" role="main">
     <div class="container-xxl px-5">
 
         <!-- HERO -->
@@ -165,7 +226,7 @@
         <section class="mb-5">
             <div class="row g-4 align-items-center">
                 <div class="col-md-6">
-                    <img src="pics/forest.jpg" alt="Sollys i grøn skov" class="img-fluid eco-image">
+                    <img src="pics/gustav-gullstrand-Woods-unsplash-resizes.jpg" alt="Sollys i grøn skov" class="img-fluid eco-image">
                 </div>
                 <div class="col-md-6">
                     <p class="eco-text-lead mb-3">
@@ -194,13 +255,13 @@
                     <span class="brand-name">EcoRunner</span>
                 </div>
                 <p class="footer-text">
-                    Sammenlign produkter med fokus på CO₂-aftryk, materialer,
+                    Sammenlign produkter med fokus på CO₂-aftryk,
                     certificeringer & ansvarlige valg.
                 </p>
             </div>
 
             <div class="col-6 col-lg-2">
-                <h6 class="footer-heading">Navigation</h6>
+                <h2 class="footer-heading">Navigation</h2>
                 <ul class="footer-links list-unstyled">
                     <li><a href="#">Bæredygtighed</a></li>
                     <li><a href="#">Certificeringer</a></li>
@@ -210,7 +271,7 @@
             </div>
 
             <div class="col-6 col-lg-3">
-                <h6 class="footer-heading">Kontakt</h6>
+                <h2 class="footer-heading">Kontakt</h2>
                 <ul class="footer-links list-unstyled">
                     <li><a href="#">Kontakt os</a></li>
                     <li><a href="#">Partnerskaber</a></li>
@@ -219,11 +280,20 @@
             </div>
 
             <div class="col-lg-3">
-                <h6 class="footer-heading">Følg os</h6>
+                <h2 class="footer-heading">Følg os</h2>
                 <div class="d-flex gap-3 social-icons">
-                    <a href="#"><i class="bi bi-instagram"></i></a>
-                    <a href="#"><i class="bi bi-facebook"></i></a>
-                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                    <a href="#">
+                        <i class="bi bi-instagram" aria-hidden="true"></i>
+                        <span class="visually-hidden">EcoRunner på Instagram</span>
+                    </a>
+                    <a href="#">
+                        <i class="bi bi-facebook" aria-hidden="true"></i>
+                        <span class="visually-hidden">EcoRunner på Facebook</span>
+                    </a>
+                    <a href="#">
+                        <i class="bi bi-linkedin" aria-hidden="true"></i>
+                        <span class="visually-hidden">EcoRunner på LinkedIn</span>
+                    </a>
                 </div>
             </div>
         </div>

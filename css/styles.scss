@@ -79,6 +79,25 @@ body {
   font-weight: bold;
   padding-inline: 28px;
   margin-left: 1.5rem;
+
+  transition:
+          background-color .18s ease,
+          border-color .18s ease,
+          box-shadow .18s ease,
+          transform .12s ease;
+}
+
+/* hover/focus-effekt */
+.search-pill:hover,
+.search-pill:focus,
+.search-pill:focus-visible {
+  background-color: lighten($gold, 4%);  // lidt lysere
+  border-color: lighten($gold, 10%);
+  box-shadow:
+          0 0 0 2px rgba($gold, .35),
+          0 10px 22px rgba(0, 0, 0, .35);
+  transform: translateY(-1px);          // lille “klik”-bevægelse
+  outline: none;
 }
 
 .search-pill::placeholder {
@@ -134,16 +153,26 @@ body {
   color: $green-dark;
 }
 
+/* Primær CTA — mørkegrøn */
 .btn-eco-cta {
-  background: $gold;
-  color: $black;
+  background: $green-dark;
+  color: $green-light;
   border-radius: 999px;
   padding: 0.55rem 1.9rem;
   font-weight: 600;
-  border: none;
+  border: 2px solid $green-dark;
+  transition: .2s ease;
+
   &:hover,
-  &:focus { background: darken($gold, 5%); color: $black; }
+  &:focus {
+    background: lighten($green-dark, 6%);
+    color: $gold;
+    border-color: $gold;
+    transform: translateY(-2px);
+    box-shadow: 0 0 0 4px rgba($gold,.25);
+  }
 }
+
 
 .btn-eco-ghost {
   border-radius: 999px;
@@ -407,3 +436,169 @@ footer.eco-footer a:hover {
   border-radius: 14px 14px 0 0; // matcher menuens top
 }
 
+
+/* -----------------------------------------------------------
+   Fokus/keyboard navigation – gør synligt og WCAG-venligt
+----------------------------------------------------------- */
+.nav-link:focus,
+.nav-link:focus-visible,
+.search-pill:focus,
+.search-pill:focus-visible,
+.icon-btn:focus,
+.icon-btn:focus-visible,
+.dropdown-item:focus,
+.dropdown-item:focus-visible {
+  outline: 3px solid $gold !important;
+  outline-offset: 3px;
+  border-radius: 8px;
+  box-shadow: 0 0 0 4px rgba($gold, .35);
+}
+
+/* SKIP-LINKS / TASTATURGENVEJE */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 1000;
+
+  padding: 0.5rem 1rem;
+  margin: 0.25rem;
+  border-radius: 999px;
+
+  background: $gold;
+  color: $black;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 0 0 2px $green-dark;
+
+  transition: left .15s ease, top .15s ease, box-shadow .15s ease;
+}
+
+/* Når brugeren tabber til linket */
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: 1rem;
+  top: 1rem;
+  box-shadow: 0 0 0 4px rgba($gold, .5);
+}
+
+/* Skjul "spring til søgning" på små skærme hvis feltet er skjult */
+@media (max-width: 991.98px) {
+  .skip-link[href="#site-search"] {
+    display: none;
+  }
+}
+
+/* --- NAVBAR: simplere på mobil/tablet --- */
+@media (max-width: 991.98px) {
+  .navbar-eco {
+    margin-bottom: 1rem;
+  }
+
+  /* pill-rammen omkring nav-links fylder for meget på små skærme */
+  .nav-pill-wrapper {
+    border: 0;
+    border-radius: 0;
+    padding: .5rem 0;
+    gap: .5rem;
+  }
+
+  .navbar-nav .nav-link {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .hero-card-eco {
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: clamp(1.9rem, 7vw, 2.4rem);
+  }
+
+  .hero-text {
+    max-width: 100%;
+    margin-inline: auto;
+  }
+
+  .hero-card-eco .d-flex.flex-wrap {
+    justify-content: center;
+  }
+
+  .hero-leaf {
+    display: none; // bladet er gemt på små skærme alligevel
+  }
+}
+
+@media (max-width: 767.98px) {
+  .icon-pill {
+    padding-inline: 1rem;
+    justify-content: center;
+  }
+
+  .icon-btn {
+    flex: 0 1 calc(33.333% - .5rem);
+    margin-bottom: .5rem;
+  }
+}
+/* Skip-links – standard skjult */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 0;
+  z-index: 1000;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: $gold;
+  color: $black;
+  font-weight: 700;
+  text-decoration: none;
+  box-shadow: 0 0 0 3px $green-dark;
+  transition: left .15s ease, top .15s ease;
+}
+
+/* Synlig ved Tab-fokus */
+.skip-link:focus,
+.skip-link:focus-visible {
+  left: 1rem;
+  top: 1rem;
+}
+
+/* Den anden skip-link placeres længere ned */
+.skip-link + .skip-link:focus,
+.skip-link + .skip-link:focus-visible {
+  top: 4rem;
+}
+
+/* 📱 Skjul skip-links helt på mobil og tablet */
+@media (max-width: 991px) {
+  .skip-link,
+  .skip-link:focus,
+  .skip-link:focus-visible {
+    display: none !important;
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 991px) {    // 991px = Bootstrap breakpoint (lg)
+  .hero-card-eco {
+    background: $green-light !important;   // Ensfarvet
+  }
+}
+
+.hero-title {
+  line-height: 1.25;
+  text-align: center;
+}
+
+/* Mobil-specifikt */
+@media (max-width: 576px) {
+  .hero-title {
+    font-size: clamp(1.8rem, 6vw, 2.4rem);  // lidt mindre tekst på mobil
+    max-width: 22ch;                       // forhindrer ultra korte linjer
+    margin-inline: auto;
+  }
+}
