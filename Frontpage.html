@@ -166,20 +166,21 @@
                 <div class="row g-4 align-items-center">
 
                     <!-- Tekst venstre -->
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 d-flex flex-column align-items-start text-start">
                         <h1 class="hero-title mb-3">
-                            Søg, sammenlign og vælg<br>
+                            Søg, sammenlign og vælg
+                            <br class="d-none d-lg-block">
                             det grønneste tilbud i dag
                         </h1>
+
                         <p class="hero-text mb-4">
                             EcoRunner hjælper dig med at finde tilbud, hvor pris, CO₂-aftryk,
                             materialer og certificeringer alle tæller med.
                         </p>
-                        <div class="d-flex flex-wrap gap-2">
-                            <button class="btn btn-eco-cta">
-                                Se alle tilbud
-                            </button>
-                        </div>
+
+                        <button class="btn btn-eco-cta">
+                            Se alle tilbud
+                        </button>
                     </div>
 
                     <!-- Blad-grafik højre -->
@@ -190,32 +191,33 @@
             </div>
         </section>
 
+
         <!-- IKON-PILLER (KATEGORIER) -->
         <section class="mb-5">
             <div class=" d-flex flex-wrap justify-content-between align-items-center gap-2 px-4 px-md-5 py-2">
 
                 <button class="icon-btn" aria-label="Butikker og køb">
-                    <i class="bi bi-cart3"></i>
+                    <i class="bi bi-cart3" aria-hidden="true"></i>
                 </button>
 
                 <button class="icon-btn" aria-label="Mad og Økologi">
-                    <i class="bi bi-capsule"></i>
+                    <i class="bi bi-capsule" aria-hidden="true"></i>
                 </button>
 
                 <button class="icon-btn" aria-label="Bolig og Hjem">
-                    <i class="bi bi-house"></i>
+                    <i class="bi bi-house" aria-hidden="true"></i>
                 </button>
 
                 <button class="icon-btn" aria-label="Gaming og Underholdning">
-                    <i class="bi bi-controller"></i>
+                    <i class="bi bi-controller" aria-hidden="true"></i>
                 </button>
 
                 <button class="icon-btn" aria-label="Elektronik og Mobil">
-                    <i class="bi bi-phone"></i>
+                    <i class="bi bi-phone" aria-hidden="true"></i>
                 </button>
 
                 <button class="icon-btn" aria-label="Reparation og Genbrug">
-                    <i class="bi bi-tools"></i>
+                    <i class="bi bi-tools" aria-hidden="true"></i>
                 </button>
 
 
@@ -223,12 +225,31 @@
         </section>
 
         <!-- OM ECORUNNER SEKTION -->
-        <section class="mb-5">
+        <section class="mb-5" aria-labelledby="about-heading">
             <div class="row g-4 align-items-center">
+
                 <div class="col-md-6">
-                    <img src="pics/gustav-gullstrand-Woods-unsplash-resizes.jpg" alt="Sollys i grøn skov" class="img-fluid eco-image">
+                    <picture>
+
+                        <!-- Mobil (smallest) -->
+                        <source srcset="pics/woodsphone-min.webp" media="(max-width: 576px)">
+
+                        <!-- Tablet -->
+                        <source srcset="pics/woods2tabl.png" media="(max-width: 992px)">
+
+                        <!-- Desktop (default fallback) -->
+                        <img src="pics/gustav-gullstrand-Woods-unsplash-resizes-min.jpg"
+                             alt="Sollys i grøn skov"
+                             class="img-fluid eco-image">
+
+                    </picture>
                 </div>
+
                 <div class="col-md-6">
+                    <h2 id="about-heading" class="eco-about-title mb-3" tabindex="0">
+                        Om EcoRunner
+                    </h2>
+
                     <p class="eco-text-lead mb-3">
                         EcoRunner er en digital platform der sammenligner produkter ikke kun på pris, men på:
                         CO₂-aftryk, materialer, certificeringer, producentens klimaprofil og produktets holdbarhed
@@ -239,6 +260,42 @@
                         ved at give så meget information vi kan til kunderne.
                     </p>
                 </div>
+
+            </div>
+        </section>
+        <section class="about-accessibility my-5" tabindex="-1">
+            <div class="container-xxl px-4 px-md-5">
+                <h2 class="eco-about-title" tabindex="0">Vores tilgang til grøn omstilling & ansvar</h2>
+
+                <p class="about-text">
+                    Hos EcoRunner mener vi, at grøn omstilling kræver åbenhed, ærlighed og adgang for alle.
+                    Derfor arbejder vi på at gøre vores platform så tilgængelig og brugervenlig som muligt,
+                    så flere kan træffe informerede valg uden unødige barrierer.
+                </p>
+
+                <p class="about-text">
+                    Vi forbedrer løbende funktioner, struktur og kontraster, og tester for at sikre,
+                    at flest muligt kan navigere siden uden problemer.
+                </p>
+
+                <p class="about-text">
+                    Vores mål er ikke at fremstå perfekte – men at skabe gennemsigtighed i et marked,
+                    hvor ordet “grøn” ofte bruges uden bevis. EcoRunner viser kun produkter med
+                    dokumentation og certificeringer, så brugeren kan træffe egne valg på et oplyst grundlag.
+                </p>
+
+                <p class="about-text">
+                    Vi er også bevidste om vores eget ansvar. Vi arbejder gradvist på at reducere vores klimaaftryk,
+                    bl.a. ved at optimere drift, være kritiske i vores datakilder og vælge løsninger med lavere
+                    miljøbelastning, når det er muligt. Det er et arbejde i udvikling – og vi deler løbende,
+                    hvordan vi gør det bedre.
+                </p>
+
+                <p class="about-text">
+                    Derudover ønsker vi at skabe en divers og inkluderende arbejdsplads, hvor alle kan være sig selv.
+                    Forskellige perspektiver styrker vores arbejde og øger vores forståelse af tilgængelighed –
+                    både digitalt og menneskeligt.
+                </p>
             </div>
         </section>
 

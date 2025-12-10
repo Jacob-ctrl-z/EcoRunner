@@ -40,7 +40,17 @@ body {
   background: $green-dark;
 }
 
-/* NAVBAR */
+/* LAYOUT-BREDDE (desktop) */
+@media (min-width: 1400px) {
+  .container-xxl {
+    max-width: 1664px;
+  }
+}
+
+/* -------------------------------------------------
+   NAVBAR
+-------------------------------------------------- */
+
 .navbar-eco {
   background: $green-dark;
   margin-bottom: 1.5rem;
@@ -60,288 +70,7 @@ body {
   color: $green-light;
 }
 
-.nav-pill-wrapper {
-  border: 1.5px solid $green-light;
-  border-radius: 999px;
-}
-
-.nav-link {
-  color: $green-light !important;
-  font-size: .9rem;
-  &:hover { color: $gold !important; }
-}
-
-.search-pill {
-  border-radius: 999px;
-  border: 2px solid $gold;
-  background: $gold;
-  color: $black;
-  font-weight: bold;
-  padding-inline: 28px;
-  margin-left: 1.5rem;
-
-  transition:
-          background-color .18s ease,
-          border-color .18s ease,
-          box-shadow .18s ease,
-          transform .12s ease;
-}
-
-/* hover/focus-effekt */
-.search-pill:hover,
-.search-pill:focus,
-.search-pill:focus-visible {
-  background-color: lighten($gold, 4%);  // lidt lysere
-  border-color: lighten($gold, 10%);
-  box-shadow:
-          0 0 0 2px rgba($gold, .35),
-          0 10px 22px rgba(0, 0, 0, .35);
-  transform: translateY(-1px);          // lille “klik”-bevægelse
-  outline: none;
-}
-
-.search-pill::placeholder {
-  color: $black;
-}
-
-/* DROPDOWNS */
-.dropdown-menu-eco {
-  background: $green-light;
-  border: 2px solid $green-dark;
-}
-
-.dropdown-menu-eco .dropdown-item {
-  color: $green-dark;
-  font-family: Verdana, sans-serif;
-  font-size: 0.9rem;
-}
-
-.dropdown-menu-eco .dropdown-item:hover {
-  background: $gold;
-  color: $black;
-}
-
-.dropdown-header {
-  color: $green-dark;
-  font-weight: 700;
-  font-size: .85rem;
-  padding: 6px 12px;
-  opacity: 0.9;
-}
-
-/* HERO */
-.hero-eco {
-  color: $green-dark;
-}
-
-.hero-card-eco {
-
-  border-radius: 24px;
-  background: $green-light;
-}
-
-.hero-title {
-  font-family: 'Amarante', serif;
-  font-size: clamp(2.4rem, 3.4vw, 3.4rem);
-  color: $green-dark;
-}
-
-.hero-text {
-  font-family: Verdana, sans-serif;
-  font-size: 0.95rem;
-  max-width: 480px;
-  color: $green-dark;
-}
-
-/* Primær CTA — mørkegrøn */
-.btn-eco-cta {
-  background: $green-dark;
-  color: $green-light;
-  border-radius: 999px;
-  padding: 0.55rem 1.9rem;
-  font-weight: 600;
-  border: 2px solid $green-dark;
-  transition: .2s ease;
-
-  &:hover,
-  &:focus {
-    background: lighten($green-dark, 6%);
-    color: $gold;
-    border-color: $gold;
-    transform: translateY(-2px);
-    box-shadow: 0 0 0 4px rgba($gold,.25);
-  }
-}
-
-
-.btn-eco-ghost {
-  border-radius: 999px;
-  border: 2px solid $green-dark;
-  background: transparent;
-  color: $green-dark;
-  padding: 0.55rem 1.6rem;
-  font-weight: 500;
-  &:hover,
-  &:focus { border-color: $gold; color: $gold; }
-}
-
-/* bladet til højre */
-.hero-leaf {
-  width: 55%;
-  max-width: 260px;
-  height: auto;
-}
-
-/* IKON-PILLER */
-.icon-pill {
-  border: 1.5px solid $green-light;
-  border-radius: 18px;
-  background: $green-dark;
-}
-
-.icon-btn {
-  background: transparent;
-  border: 2px solid $green-light;
-  border-radius: 12px;
-  padding: .45rem .7rem;
-  color: $green-light;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  cursor: pointer;
-  transition: .2s ease;
-  &:hover,
-  &:focus { border-color: $gold; color: $gold; transform: scale(1.05); }
-}
-
-/* BILLEDE + TEKST SEKTION */
-.eco-image {
-  border-radius: 18px;
-  display: block;
-}
-
-.eco-text-lead,
-.eco-text {
-  color: $green-light;
-  font-family: Verdana, sans-serif;
-  font-size: 0.95rem;
-}
-
-.eco-text-lead { font-weight: 500; }
-
-/* LAYOUT-BREDDE */
-@media (min-width: 1400px) {
-  .container-xxl {
-    max-width: 1664px;
-  }
-}
-
-/* FOOTER */
-.eco-footer {
-  background: #000;
-  color: #fff;
-}
-
-.eco-footer .brand-name {
-  color: #fff;
-}
-
-.footer-text {
-  font-size: .9rem;
-  opacity: .85;
-  max-width: 340px;
-}
-
-.footer-heading {
-  font-weight: 600;
-  font-size: .95rem;
-  margin-bottom: .5rem;
-  color: #fff;
-}
-
-.footer-links a,
-.eco-footer a {
-  color: #fff;
-  opacity: .8;
-  text-decoration: none;
-  font-size: .9rem;
-  margin-bottom: .35rem;
-  display: inline-block;
-}
-
-.footer-links a:hover,
-.eco-footer a:hover {
-  opacity: 1;
-  color: $gold;
-}
-
-.footer-line {
-  border-color: rgba(255,255,255,.2);
-  margin-top: 2rem;
-}
-
-.footer-bottom {
-  opacity: .7;
-  font-size: .85rem;
-}
-footer.eco-footer {
-  background-color: #000 !important;   // sort
-  color: #fff !important;              // hvid tekst
-}
-
-footer.eco-footer a {
-  color: #fff !important;              // hvide links
-  text-decoration: none;
-}
-
-footer.eco-footer a:hover {
-  color: $gold !important;             // guld på hover
-}
-/* FOOTER IKONER – gør dem større */
-.eco-footer .social-icons a {
-  font-size: 1.6rem;       // ← gør dem større (kan øges fx til 2rem)
-  color: #fff !important;
-  transition: .2s ease;
-}
-
-.eco-footer .social-icons a:hover {
-  color: $gold !important;
-  transform: scale(1.15);
-}
-
-.hero-card-eco {
-  background: linear-gradient(
-                  90deg,
-                  $green-light 0%,      // lys grøn ved start
-                  $green-light 45%,     // fast farve indtil teksten stopper (juster)
-                  mix($green-light, $green-dark, 30%) 65%,  // blød overgang
-                  $green-dark 100%      // slut i mørkegrøn
-  );
-
-  border-radius: 24px;
-}
-
-.icon-btn[aria-label] {
-  position: relative;
-}
-
-.icon-btn[aria-label]:hover::after {
-  content: attr(aria-label);
-  position: absolute;
-  bottom: -32px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #BDE8CA;
-  color: #063A21;
-  font-size: 0.75rem;
-  padding: 4px 8px;
-  border-radius: 6px;
-  white-space: nowrap;
-  pointer-events: none;
-}
-
-/* NAV-PILL WRAPPER – lidt 3D/hover */
+/* Pille rundt om nav-links */
 .nav-pill-wrapper {
   border: 1.5px solid $green-light;
   border-radius: 999px;
@@ -360,7 +89,7 @@ footer.eco-footer a:hover {
   transform: translateY(-1px);
 }
 
-/* LINKS MED UNDERSTREGNING PÅ HOVER */
+/* Nav-links + underline-animation */
 .nav-link {
   color: $green-light !important;
   font-size: .9rem;
@@ -390,112 +119,44 @@ footer.eco-footer a:hover {
   transform: scaleX(1);
 }
 
-
-/* DROPDOWNS */
-.dropdown-menu-eco {
-  background: $green-light;
-  border: 2px solid $green-dark;
-  border-radius: 18px;
-
-  // NYT ↓
-  padding: 0.6rem 0 1.1rem;   // lidt ekstra plads i bunden
-  overflow: hidden;           // klipper hover-baggrund i de runde hjørner
-}
-
-/* når menuen aktiveres */
-.dropdown-menu-eco.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* item styling */
-.dropdown-menu-eco .dropdown-item {
-  color: $green-dark;
-  font-family: Verdana, sans-serif;
-  font-size: .95rem;
-  padding: .65rem 1.3rem;      // ⬅ mere klikflade og bedre spacing
-  border-radius: 10px;         // små afrundede corners så hover ikke skærer ud
-}
-
-/* hover state */
-.dropdown-menu-eco .dropdown-item:hover {
-  background: $gold;
-  color: $black;
-  transform: translateX(4px);   // valgfri micro-motion → føles moderne
-  transition: .15s ease;
-}
-
-/* header */
-.dropdown-menu-eco .dropdown-header {
-  padding: .7rem 1.3rem .55rem;
-  font-size: .87rem;
-  font-weight: 700;
-  color: $green-dark;
-  opacity: .9;
-  border-bottom: 1px solid rgba($green-dark,.15);
-  border-radius: 14px 14px 0 0; // matcher menuens top
-}
-
-
-/* -----------------------------------------------------------
-   Fokus/keyboard navigation – gør synligt og WCAG-venligt
------------------------------------------------------------ */
-.nav-link:focus,
-.nav-link:focus-visible,
-.search-pill:focus,
-.search-pill:focus-visible,
-.icon-btn:focus,
-.icon-btn:focus-visible,
-.dropdown-item:focus,
-.dropdown-item:focus-visible {
-  outline: 3px solid $gold !important;
-  outline-offset: 3px;
-  border-radius: 8px;
-  box-shadow: 0 0 0 4px rgba($gold, .35);
-}
-
-/* SKIP-LINKS / TASTATURGENVEJE */
-.skip-link {
-  position: absolute;
-  left: -999px;
-  top: 0;
-  z-index: 1000;
-
-  padding: 0.5rem 1rem;
-  margin: 0.25rem;
+/* Søg-felt (pille) */
+.search-pill {
   border-radius: 999px;
-
+  border: 2px solid $gold;
   background: $gold;
   color: $black;
-  font-weight: 600;
-  text-decoration: none;
-  box-shadow: 0 0 0 2px $green-dark;
-
-  transition: left .15s ease, top .15s ease, box-shadow .15s ease;
+  font-weight: bold;
+  padding-inline: 28px;
+  margin-left: 1.5rem;
+  transition:
+          background-color .18s ease,
+          border-color .18s ease,
+          box-shadow .18s ease,
+          transform .12s ease;
 }
 
-/* Når brugeren tabber til linket */
-.skip-link:focus,
-.skip-link:focus-visible {
-  left: 1rem;
-  top: 1rem;
-  box-shadow: 0 0 0 4px rgba($gold, .5);
+.search-pill::placeholder {
+  color: $black;
 }
 
-/* Skjul "spring til søgning" på små skærme hvis feltet er skjult */
-@media (max-width: 991.98px) {
-  .skip-link[href="#site-search"] {
-    display: none;
-  }
+.search-pill:hover,
+.search-pill:focus,
+.search-pill:focus-visible {
+  background-color: lighten($gold, 4%);
+  border-color: lighten($gold, 10%);
+  box-shadow:
+          0 0 0 2px rgba($gold, .35),
+          0 10px 22px rgba(0, 0, 0, .35);
+  transform: translateY(-1px);
+  outline: none;
 }
 
-/* --- NAVBAR: simplere på mobil/tablet --- */
+/* NAVBAR – mobil/tablet simplere */
 @media (max-width: 991.98px) {
   .navbar-eco {
     margin-bottom: 1rem;
   }
 
-  /* pill-rammen omkring nav-links fylder for meget på små skærme */
   .nav-pill-wrapper {
     border: 0;
     border-radius: 0;
@@ -509,19 +170,32 @@ footer.eco-footer a:hover {
   }
 }
 
-@media (max-width: 991.98px) {
+/* -------------------------------------------------
+   HERO
+-------------------------------------------------- */
+
+.hero-eco {
+  color: $green-dark;
+}
+
+/* Desktop: gradient baggrund */
+.hero-card-eco {
+  background: linear-gradient(
+                  90deg,
+                  $green-light 0%,
+                  $green-light 45%,
+                  mix($green-light, $green-dark, 30%) 65%,
+                  $green-dark 100%
+  );
+  border-radius: 24px;
+}
+
+/* Tablet/mobil: ensfarvet */
+@media (max-width: 991px) {
   .hero-card-eco {
+    background: $green-light;
     padding: 1.5rem;
     text-align: center;
-  }
-
-  .hero-title {
-    font-size: clamp(1.9rem, 7vw, 2.4rem);
-  }
-
-  .hero-text {
-    max-width: 100%;
-    margin-inline: auto;
   }
 
   .hero-card-eco .d-flex.flex-wrap {
@@ -529,10 +203,142 @@ footer.eco-footer a:hover {
   }
 
   .hero-leaf {
-    display: none; // bladet er gemt på små skærme alligevel
+    display: none;
   }
 }
 
+/* HERO-OVERSKRIFT */
+.hero-title {
+  font-family: 'Amarante', serif;
+  font-size: clamp(1.9rem, 4vw, 3.4rem);
+  line-height: 1.1;
+  color: $green-dark;
+  text-wrap: balance;   // moderne browsere
+  max-width: 22ch;
+  text-align: center;
+}
+
+/* Finjuster på mindre skærme */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: clamp(1.7rem, 6vw, 2.3rem);
+    max-width: 20ch;
+    margin-inline: auto;
+  }
+}
+
+/* Hero-brødtekst */
+.hero-text {
+  font-family: Verdana, sans-serif;
+  font-size: clamp(0.9rem, 2.4vw, 1rem);
+  max-width: 38ch;
+  color: $green-dark;
+}
+
+/* Blad-grafik (desktop) */
+.hero-leaf {
+  width: 55%;
+  max-width: 260px;
+  height: auto;
+}
+
+/* -------------------------------------------------
+   KNAPPER
+-------------------------------------------------- */
+
+/* Primær CTA – mørkegrøn */
+.btn-eco-cta {
+  background: $green-dark;
+  color: $green-light;
+  border-radius: 999px;
+  padding: 0.55rem 1.9rem;
+  font-weight: 600;
+  border: 2px solid $green-dark;
+  transition: .2s ease;
+}
+
+.btn-eco-cta:hover,
+.btn-eco-cta:focus {
+  background: lighten($green-dark, 6%);
+  color: $gold;
+  border-color: $gold;
+  transform: translateY(-2px);
+  box-shadow: 0 0 0 4px rgba($gold,.25);
+}
+
+/* Sekundær ghost-knap */
+.btn-eco-ghost {
+  border-radius: 999px;
+  border: 2px solid $green-dark;
+  background: transparent;
+  color: $green-dark;
+  padding: 0.55rem 1.6rem;
+  font-weight: 500;
+}
+
+.btn-eco-ghost:hover,
+.btn-eco-ghost:focus {
+  border-color: $gold;
+  color: $gold;
+}
+
+/* -------------------------------------------------
+   IKON-PILLER / KATEGORIER
+-------------------------------------------------- */
+
+.icon-pill {
+  border: 1.5px solid $green-light;
+  border-radius: 18px;
+  background: $green-dark;
+}
+
+.icon-btn {
+  background: transparent;
+  border: 2px solid $green-light;
+  border-radius: 12px;
+  padding: .45rem .7rem;
+  color: $green-light;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: .2s ease;
+  position: relative;
+}
+
+.icon-btn:hover,
+.icon-btn:focus {
+  border-color: $gold;
+  color: $gold;
+  transform: scale(1.05);
+}
+
+/* Tooltip baseret på aria-label – hover + keyboard fokus */
+.icon-btn[aria-label]:hover::after,
+.icon-btn[aria-label]:focus-visible::after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #BDE8CA;
+  color: #063A21;
+  font-size: 0.75rem;
+  padding: 4px 8px;
+  border-radius: 6px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 10;
+}
+
+/* Tydelig fokus-ring */
+.icon-btn:focus-visible {
+  outline: 3px solid #ECD06F;
+  outline-offset: 4px;
+}
+
+/* Ikoner på mobil: 2–3 pr. række */
 @media (max-width: 767.98px) {
   .icon-pill {
     padding-inline: 1rem;
@@ -544,7 +350,83 @@ footer.eco-footer a:hover {
     margin-bottom: .5rem;
   }
 }
-/* Skip-links – standard skjult */
+
+/* -------------------------------------------------
+   BILLEDER & TEKST
+-------------------------------------------------- */
+
+.eco-image {
+  border-radius: 18px;
+  display: block;
+}
+
+.eco-text-lead,
+.eco-text {
+  color: $green-light;
+  font-family: Verdana, sans-serif;
+  font-size: 0.95rem;
+}
+
+.eco-text-lead {
+  font-weight: 500;
+}
+
+/* Fokus på sektionstitler */
+.hero-title:focus,
+.eco-about-title:focus {
+  outline: 3px solid $gold;
+  outline-offset: 4px;
+}
+
+/* -------------------------------------------------
+   DROPDOWNS
+-------------------------------------------------- */
+
+.dropdown-menu-eco {
+  background: $green-light;
+  border: 2px solid $green-dark;
+  border-radius: 18px;
+  padding: 0.6rem 0 1.1rem;  // ekstra plads i bunden
+  overflow: hidden;          // sørger for at hover ikke “stikker ud”
+}
+
+/* Ekstra styling hvis du bruger show-animationer via JS */
+.dropdown-menu-eco.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Items */
+.dropdown-menu-eco .dropdown-item {
+  color: $green-dark;
+  font-family: Verdana, sans-serif;
+  font-size: .95rem;
+  padding: .65rem 1.3rem;
+  border-radius: 10px;
+  transition: .15s ease;
+}
+
+.dropdown-menu-eco .dropdown-item:hover {
+  background: $gold;
+  color: $black;
+  transform: translateX(4px);
+}
+
+/* Header i dropdown */
+.dropdown-menu-eco .dropdown-header {
+  padding: .7rem 1.3rem .55rem;
+  font-size: .87rem;
+  font-weight: 700;
+  color: $green-dark;
+  opacity: .9;
+  border-bottom: 1px solid rgba($green-dark,.15);
+  border-radius: 14px 14px 0 0;
+}
+
+/* -------------------------------------------------
+   SKIP-LINKS
+-------------------------------------------------- */
+
 .skip-link {
   position: absolute;
   left: -999px;
@@ -567,13 +449,13 @@ footer.eco-footer a:hover {
   top: 1rem;
 }
 
-/* Den anden skip-link placeres længere ned */
+/* Det andet skip-link lidt længere nede */
 .skip-link + .skip-link:focus,
 .skip-link + .skip-link:focus-visible {
   top: 4rem;
 }
 
-/* 📱 Skjul skip-links helt på mobil og tablet */
+/* Skjul skip-links på mobil/tablet */
 @media (max-width: 991px) {
   .skip-link,
   .skip-link:focus,
@@ -583,22 +465,114 @@ footer.eco-footer a:hover {
   }
 }
 
-@media (max-width: 991px) {    // 991px = Bootstrap breakpoint (lg)
-  .hero-card-eco {
-    background: $green-light !important;   // Ensfarvet
+/* -------------------------------------------------
+   FOCUSRING / KEYBOARD-GENERELT
+-------------------------------------------------- */
+
+.nav-link:focus,
+.nav-link:focus-visible,
+.search-pill:focus,
+.search-pill:focus-visible,
+.icon-btn:focus,
+.icon-btn:focus-visible,
+.dropdown-item:focus,
+.dropdown-item:focus-visible,
+.btn-eco-cta:focus,
+.btn-eco-ghost:focus {
+  outline: 3px solid $gold !important;
+  outline-offset: 3px;
+  border-radius: 8px;
+  box-shadow: 0 0 0 4px rgba($gold, .35);
+}
+
+/* -------------------------------------------------
+   FOOTER
+-------------------------------------------------- */
+
+.eco-footer {
+  background: #000 !important;
+  color: #fff !important;
+}
+
+.eco-footer .brand-name {
+  color: #fff;
+}
+
+.footer-text {
+  font-size: .9rem;
+  opacity: .85;
+  max-width: 340px;
+}
+
+.footer-heading {
+  font-weight: 600;
+  font-size: .95rem;
+  margin-bottom: .5rem;
+  color: #fff;
+}
+
+/* Links i footer */
+.footer-links a,
+.eco-footer a {
+  color: #fff !important;
+  opacity: .8;
+  text-decoration: none;
+  font-size: .9rem;
+  margin-bottom: .35rem;
+  display: inline-block;
+}
+
+.footer-links a:hover,
+.eco-footer a:hover {
+  opacity: 1;
+  color: $gold !important;
+}
+
+.footer-line {
+  border-color: rgba(255,255,255,.2);
+  margin-top: 2rem;
+}
+
+.footer-bottom {
+  opacity: .7;
+  font-size: .85rem;
+}
+
+/* Sociale ikoner i footer */
+.eco-footer .social-icons a {
+  font-size: 1.6rem;
+  color: #fff !important;
+  transition: .2s ease;
+}
+
+.eco-footer .social-icons a:hover {
+  color: $gold !important;
+  transform: scale(1.15);
+}
+
+/* -------------------------------------------------
+   REDUCÉR ANIMATIONER (PREFERENCES)
+-------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0s !important;
   }
-}
 
-.hero-title {
-  line-height: 1.25;
-  text-align: center;
-}
+  html {
+    scroll-behavior: auto !important;
+  }
 
-/* Mobil-specifikt */
-@media (max-width: 576px) {
-  .hero-title {
-    font-size: clamp(1.8rem, 6vw, 2.4rem);  // lidt mindre tekst på mobil
-    max-width: 22ch;                       // forhindrer ultra korte linjer
-    margin-inline: auto;
+  .dropdown-menu-eco {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .icon-btn:hover,
+  .icon-btn:focus {
+    transform: none !important;
   }
 }
